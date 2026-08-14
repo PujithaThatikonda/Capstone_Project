@@ -1,0 +1,237 @@
+ZEpto MODULE 1 - SQL QUERY OUTPUTS
+================================================================================
+
+================================================================================
+QUERY 1
+================================================================================
+
+SQL:
+SELECT
+    title,
+    price_gbp,
+    rating,
+    in_stock
+FROM books
+WHERE rating >= 4
+ORDER BY rating DESC;
+
+OUTPUT:
+                                                                                   title  price_gbp  rating  in_stock
+                                                      1,000 Places to See Before You Die      26.08       5         1
+                                                  A Time of Torment (Charlie Parker #14)      48.35       5         1
+                       What Happened on Beale Street (Secrets of the South Mysteries #2)      25.37       5         1
+                The Bachelor Girl's Guide to Murder (Herringford and Watts Mysteries #1)      52.30       5         1
+                                                 A Flight of Arrows (The Pathfinders #2)      55.53       5         1
+                                                                            Mrs. Houdini      30.25       5         1
+                                                                   The Passion of Dolssa      28.32       5         1
+                                                                  Voyager (Outlander #3)      21.07       5         1
+                                                                            The Red Tent      35.66       5         1
+                                                                                    Join      35.67       5         1
+                      Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond      49.43       4         1
+                                                        A Year in Provence (Provence #1)      56.88       4         1
+                                                                           Sharp Objects      47.82       4         1
+                                                                     The Past Never Ends      56.50       4         1
+                                         The Murder of Roger Ackroyd (Hercule Poirot #4)      44.10       4         1
+                                   Murder at the 42nd Street Library (Raymond Ambler #1)      54.36       4         1
+                                        Delivering the Truth (Quaker Midwife Mystery #1)      20.89       4         1
+                                                               The Marriage of Opposites      28.08       4         1
+                                                                       A Paris Apartment      39.01       4         1
+                                         World Without End (The Pillars of the Earth #2)      32.97       4         1
+William Shakespeare's Star Wars: Verily, A New Hope (William Shakespeare's Star Wars #4)      43.30       4         1
+                                                                                   Arena      21.36       4         1
+                                                                        Ready Player One      19.07       4         1
+                                Having the Barbarian's Baby (Ice Planet Barbarians #7.5)      34.96       4         1
+
+================================================================================
+QUERY 2
+================================================================================
+
+SQL:
+SELECT
+    title,
+    price_gbp,
+    price_inr,
+    rating
+FROM books
+ORDER BY price_gbp DESC
+LIMIT 10;
+
+OUTPUT:
+                                                                   title  price_gbp  price_inr  rating
+                                           Boar Island (Anna Pigeon #19)      59.48    6275.14       3
+                                        A Year in Provence (Provence #1)      56.88    6000.84       4
+                                                     The Past Never Ends      56.50    5960.75       4
+                                        The Last Painting of Sara de Vos      55.55    5860.52       2
+                                 A Flight of Arrows (The Pathfinders #2)      55.53    5858.42       5
+                                                          Dune (Dune #1)      54.86    5787.73       1
+                   Murder at the 42nd Street Library (Raymond Ambler #1)      54.36    5734.98       4
+                                          The Last Mile (Amos Decker #2)      54.21    5719.16       2
+                                                      Tipping the Velvet      53.74    5669.57       1
+The Bachelor Girl's Guide to Murder (Herringford and Watts Mysteries #1)      52.30    5517.65       5
+
+================================================================================
+QUERY 3
+================================================================================
+
+SQL:
+SELECT DISTINCT
+    category_name
+FROM categories
+ORDER BY category_name;
+
+OUTPUT:
+     category_name
+Historical Fiction
+           Mystery
+   Science Fiction
+            Travel
+
+================================================================================
+QUERY 4
+================================================================================
+
+SQL:
+SELECT
+    title,
+    price_gbp,
+    rating
+FROM books
+WHERE price_gbp BETWEEN 20 AND 40
+ORDER BY price_gbp;
+
+OUTPUT:
+                                                                                            title  price_gbp  rating
+                                                                             Love, Lies and Spies      20.55       2
+                                                 Delivering the Truth (Quaker Midwife Mystery #1)      20.89       4
+                                                                           Voyager (Outlander #3)      21.07       5
+                                                                                            Arena      21.36       4
+The Road to Little Dribbling: Adventures of an American in Britain (Notes From a Small Island #2)      23.21       1
+                                What Happened on Beale Street (Secrets of the South Mysteries #2)      25.37       5
+                                                               1,000 Places to See Before You Die      26.08       5
+                                                                                  Soft Apocalypse      26.12       2
+                                                                        Girl With a Pearl Earring      26.77       1
+                                                                 Poisonous (Max Revere Novels #3)      26.80       3
+                                                                                        The Widow      27.26       2
+                                                                        The Marriage of Opposites      28.08       4
+                                                                            The Passion of Dolssa      28.32       5
+                        Forever and Forever: The Courtship of Henry Longfellow and Fanny Appleton      29.69       3
+                                                                                     Mrs. Houdini      30.25       5
+                                                                         The Great Railway Bazaar      30.54       1
+                                                   Foundation (Foundation (Publication Order) #1)      32.42       1
+                                                  World Without End (The Pillars of the Earth #2)      32.97       4
+                          Life, the Universe and Everything (Hitchhiker's Guide to the Galaxy #3)      33.26       2
+                                         Having the Barbarian's Baby (Ice Planet Barbarians #7.5)      34.96       4
+                                                                                      Most Wanted      35.28       3
+                                                                                     The Red Tent      35.66       5
+                                                                                             Join      35.67       5
+                                                          The Last Girl (The Dominion Trilogy #1)      36.26       2
+                              Vagabonding: An Uncommon Guide to the Art of Long-Term World Travel      36.94       2
+                                                                            The House by the Lake      36.95       1
+                                                                             Under the Tuscan Sun      37.33       3
+                                                                           The Invention of Wings      37.34       1
+                                            Mesaerion: The Best Science Fiction Stories 1800-1849      37.59       1
+                                                        Neither Here nor There: Travels in Europe      38.95       3
+                                                                                A Paris Apartment      39.01       4
+
+================================================================================
+QUERY 5
+================================================================================
+
+SQL:
+SELECT
+    title,
+    rating,
+    price_gbp
+FROM books
+WHERE rating IN (4, 5)
+ORDER BY rating DESC, price_gbp DESC;
+
+OUTPUT:
+                                                                                   title  rating  price_gbp
+                                                 A Flight of Arrows (The Pathfinders #2)       5      55.53
+                The Bachelor Girl's Guide to Murder (Herringford and Watts Mysteries #1)       5      52.30
+                                                  A Time of Torment (Charlie Parker #14)       5      48.35
+                                                                                    Join       5      35.67
+                                                                            The Red Tent       5      35.66
+                                                                            Mrs. Houdini       5      30.25
+                                                                   The Passion of Dolssa       5      28.32
+                                                      1,000 Places to See Before You Die       5      26.08
+                       What Happened on Beale Street (Secrets of the South Mysteries #2)       5      25.37
+                                                                  Voyager (Outlander #3)       5      21.07
+                                                        A Year in Provence (Provence #1)       4      56.88
+                                                                     The Past Never Ends       4      56.50
+                                   Murder at the 42nd Street Library (Raymond Ambler #1)       4      54.36
+                      Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond       4      49.43
+                                                                           Sharp Objects       4      47.82
+                                         The Murder of Roger Ackroyd (Hercule Poirot #4)       4      44.10
+William Shakespeare's Star Wars: Verily, A New Hope (William Shakespeare's Star Wars #4)       4      43.30
+                                                                       A Paris Apartment       4      39.01
+                                Having the Barbarian's Baby (Ice Planet Barbarians #7.5)       4      34.96
+                                         World Without End (The Pillars of the Earth #2)       4      32.97
+                                                               The Marriage of Opposites       4      28.08
+                                                                                   Arena       4      21.36
+                                        Delivering the Truth (Quaker Midwife Mystery #1)       4      20.89
+                                                                        Ready Player One       4      19.07
+
+================================================================================
+QUERY 6
+================================================================================
+
+SQL:
+SELECT
+    b.title,
+    c.category_name,
+    b.price_gbp,
+    b.price_inr,
+    b.rating,
+    b.in_stock
+FROM books AS b
+JOIN categories AS c
+    ON b.category_id = c.category_id
+ORDER BY b.rating DESC, b.price_gbp DESC
+LIMIT 10;
+
+OUTPUT:
+                                                                   title      category_name  price_gbp  price_inr  rating  in_stock
+                                 A Flight of Arrows (The Pathfinders #2) Historical Fiction      55.53    5858.42       5         1
+The Bachelor Girl's Guide to Murder (Herringford and Watts Mysteries #1)            Mystery      52.30    5517.65       5         1
+                                  A Time of Torment (Charlie Parker #14)            Mystery      48.35    5100.92       5         1
+                                                                    Join    Science Fiction      35.67    3763.19       5         1
+                                                            The Red Tent Historical Fiction      35.66    3762.13       5         1
+                                                            Mrs. Houdini Historical Fiction      30.25    3191.38       5         1
+                                                   The Passion of Dolssa Historical Fiction      28.32    2987.76       5         1
+                                      1,000 Places to See Before You Die             Travel      26.08    2751.44       5         1
+       What Happened on Beale Street (Secrets of the South Mysteries #2)            Mystery      25.37    2676.54       5         1
+                                                  Voyager (Outlander #3) Historical Fiction      21.07    2222.89       5         1
+
+================================================================================
+PANDAS JOIN EQUIVALENCE
+================================================================================
+
+pd.read_sql() JOIN:
+                                                                   title      category_name  price_gbp  price_inr  rating  in_stock
+                                 A Flight of Arrows (The Pathfinders #2) Historical Fiction      55.53    5858.42       5         1
+The Bachelor Girl's Guide to Murder (Herringford and Watts Mysteries #1)            Mystery      52.30    5517.65       5         1
+                                  A Time of Torment (Charlie Parker #14)            Mystery      48.35    5100.92       5         1
+                                                                    Join    Science Fiction      35.67    3763.19       5         1
+                                                            The Red Tent Historical Fiction      35.66    3762.13       5         1
+                                                            Mrs. Houdini Historical Fiction      30.25    3191.38       5         1
+                                                   The Passion of Dolssa Historical Fiction      28.32    2987.76       5         1
+                                      1,000 Places to See Before You Die             Travel      26.08    2751.44       5         1
+       What Happened on Beale Street (Secrets of the South Mysteries #2)            Mystery      25.37    2676.54       5         1
+                                                  Voyager (Outlander #3) Historical Fiction      21.07    2222.89       5         1
+
+pd.merge() JOIN:
+                                                                   title      category_name  price_gbp  price_inr  rating  in_stock
+                                 A Flight of Arrows (The Pathfinders #2) Historical Fiction      55.53    5858.42       5         1
+The Bachelor Girl's Guide to Murder (Herringford and Watts Mysteries #1)            Mystery      52.30    5517.65       5         1
+                                  A Time of Torment (Charlie Parker #14)            Mystery      48.35    5100.92       5         1
+                                                                    Join    Science Fiction      35.67    3763.19       5         1
+                                                            The Red Tent Historical Fiction      35.66    3762.13       5         1
+                                                            Mrs. Houdini Historical Fiction      30.25    3191.38       5         1
+                                                   The Passion of Dolssa Historical Fiction      28.32    2987.76       5         1
+                                      1,000 Places to See Before You Die             Travel      26.08    2751.44       5         1
+       What Happened on Beale Street (Secrets of the South Mysteries #2)            Mystery      25.37    2676.54       5         1
+                                                  Voyager (Outlander #3) Historical Fiction      21.07    2222.89       5         1
+
+Equivalent: True
