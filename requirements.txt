@@ -1,0 +1,70 @@
+# =====================================================
+# MODULE 1 - DATA PIPELINE
+# =====================================================
+
+# Scraping website pages
+requests
+
+# Extracting data from HTML pages
+beautifulsoup4
+
+# Data cleaning, CSV handling and analysis
+pandas
+
+# Parsing HTML efficiently
+lxml
+
+
+# =====================================================
+# MODULE 2 - ANALYTICS PIPELINE
+# =====================================================
+
+# Numerical computations
+numpy
+
+# Data visualization and charts
+matplotlib
+
+# Statistical visualization and Titanic dataset
+seaborn
+
+# Machine Learning algorithms and preprocessing
+scikit-learn
+
+# Handling imbalanced datasets using SMOTE
+imbalanced-learn
+
+# Saving and loading trained models
+joblib
+
+
+# =====================================================
+# MODULE 3 - AI SUPPORT ASSISTANT
+# =====================================================
+
+# Building REST APIs
+fastapi
+
+# Running FastAPI server
+uvicorn
+
+# Request and response validation
+pydantic
+
+# Environment variable management
+python-dotenv
+
+# Creating text embeddings
+sentence-transformers
+
+# Vector database for document storage and retrieval
+chromadb
+
+# AI workflow orchestration
+langgraph
+
+# LLM application framework
+langchain
+
+# Progress bars during processing
+tqdm
